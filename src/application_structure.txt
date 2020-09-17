@@ -1,0 +1,11 @@
+● src
++---● app
+|   +--● registration
+|   |  |--registration.component.ts|.html|.css
+|   |  +--● recruiter
+|   |  |  |--recruiter.component.ts|.html|.css
+|   |  |
+|   |  +--● shared
+|   |     |--recruiter.service.ts (form group)
+|   |
+|   |--app.module.ts
