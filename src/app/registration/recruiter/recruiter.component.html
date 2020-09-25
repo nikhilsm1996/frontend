@@ -1,11 +1,22 @@
 <form [formGroup]="service.form" class="normal-form">
-  <mat-grid-list cols="2" rowHeight="400px">
+  <mat-grid-list cols="2" rowHeight="500px">
     <mat-grid-tile>
       <div class="controles-container">
         <input type="hidden" formControlName="$key">
         <mat-form-field>
           <input formControlName="firmName" matInput placeholder="Name*">
           <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+          <mat-error *ngIf="service.form.controls['password'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="service.form.controls['password'].errors?.minlength">Minimum 8 characters needed.</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <input matInput type="password" placeholder="Confirm password" formControlName="password2">
+          <mat-error *ngIf="service.form.controls['password'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="service.form.controls['password2'].errors?.required && (password != password2)">Passwords don't match</mat-error>
         </mat-form-field>
         <mat-form-field>
           <input formControlName="email" matInput placeholder="Email">
@@ -18,7 +29,13 @@
           <mat-error *ngIf="service.form.controls['phone'].errors?.minlength">Minimum 8 charactors needed.</mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input formControlName="address" matInput placeholder="Address">
+          <mat-select formControlName="role" placeholder="Select Role">
+            <mat-option>None</mat-option>
+            
+            <ng-container *ngFor="let role of roles">
+              <mat-option value="{{role.id}}">{{role.value}}</mat-option>
+            </ng-container>
+            </mat-select>
         </mat-form-field>
         
           <div class="add-bottom-padding">

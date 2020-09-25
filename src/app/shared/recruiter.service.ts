@@ -11,9 +11,11 @@ export class RecruiterService {
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
     firmName: new FormControl('', Validators.required),
+    password: new FormControl('',[Validators.required,Validators.minLength(8),]),
+    password2: new FormControl('',[Validators.required,Validators.minLength(8),]),
     email: new FormControl('', [Validators.email,Validators.required]),
     phone: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    address: new FormControl(''),
+    role: new FormControl(''),
     privacy: new FormControl(false)
   });
 
@@ -21,9 +23,11 @@ export class RecruiterService {
     this.form.setValue({
       $key: null,
       firmName: '',
+      password:'',
+      password2:'',
       email: '',
       phone: '',
-      address: '',
+      role: '',
       privacy: false
     });
   }
