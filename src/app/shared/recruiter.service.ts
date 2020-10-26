@@ -14,7 +14,7 @@ export class RecruiterService {
     password: new FormControl('',[Validators.required,Validators.minLength(8),]),
     password2: new FormControl('',[Validators.required,Validators.minLength(8),]),
     email: new FormControl('', [Validators.email,Validators.required]),
-    phone: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(10),Validators.pattern('[0-9]*')]),
     role: new FormControl(''),
     privacy: new FormControl(false)
   });
