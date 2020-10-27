@@ -10,13 +10,15 @@
         <mat-form-field>
           <input matInput type="password" placeholder="Password" formControlName="password">
           <mat-error *ngIf="service.form.controls['password'].errors?.required">This field is mandatory.</mat-error>
-          <mat-error *ngIf="service.form.controls['password'].errors?.minlength">Minimum 8 characters needed.</mat-error>
+          <mat-error *ngIf="service.form.controls['password'].errors?.minlength">Minimum 8 characters needed.
+          </mat-error>
         </mat-form-field>
-      
+
         <mat-form-field>
           <input matInput type="password" placeholder="Confirm password" formControlName="password2">
           <mat-error *ngIf="service.form.controls['password'].errors?.required">This field is mandatory.</mat-error>
-          <mat-error *ngIf="service.form.controls['password2'].errors?.required && (password != password2)">Passwords don't match</mat-error>
+          <mat-error *ngIf="service.form.controls['password2'].errors?.required && (password != password2)">Passwords
+            don't match</mat-error>
         </mat-form-field>
         <mat-form-field>
           <input formControlName="email" matInput placeholder="Email">
@@ -27,32 +29,34 @@
           <input formControlName="phone" matInput placeholder="Phone*">
           <mat-error *ngIf="service.form.controls['phone'].errors?.required">This field is mandatory.</mat-error>
           <mat-error *ngIf="service.form.controls['phone'].errors?.minlength">Minimum 8 charactors needed.</mat-error>
+          <mat-error *ngIf="service.form.controls['phone'].errors?.pattern">Phone number must be numbers only</mat-error>
         </mat-form-field>
+
         <mat-form-field>
           <mat-select formControlName="role" placeholder="Select Role">
             <mat-option>None</mat-option>
-            
+
             <ng-container *ngFor="let role of roles">
               <mat-option value="{{role.id}}">{{role.value}}</mat-option>
             </ng-container>
-            </mat-select>
+          </mat-select>
         </mat-form-field>
-        
-          <div class="add-bottom-padding">
-            <mat-checkbox formControlName="privacy">I Agree to Share the Above Information</mat-checkbox>
-          </div>
-        
-        
-          <div class="button-row">
-            <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
-            <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
-          </div>
-        
-        
+
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="privacy">I Agree to Share the Above Information</mat-checkbox>
+        </div>
+
+
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+
+
       </div>
-      
+
     </mat-grid-tile>
- 
-  
+
+
   </mat-grid-list>
 </form>
