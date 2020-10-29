@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from "./material/material.module";
-import { ReactiveFormsModule } from "@angular/forms";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule,ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { RecruiterComponent } from './registration/recruiter/recruiter.component';
-import { RecruiterService } from './shared/recruiter.service';
+import { RecruiterComponent } from './recruiter/recruiter.component';
+import { RecruiterService } from './recruiter.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { RecruiterService } from './shared/recruiter.service';
   imports: [
     BrowserModule,
     MaterialModule,
+    FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
