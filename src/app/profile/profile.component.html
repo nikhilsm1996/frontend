@@ -1,0 +1,51 @@
+<section class="showcase">
+  <mat-toolbar color="primary" class="mat-elevation-z20"> 
+  <span>FreeGO</span>
+  <div class="space">
+  </div>
+  <a mat-button>CONTACT</a>
+  <a mat-raised-button color="accent">SIGN OUT</a>  
+</mat-toolbar> 
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [(opened)]="opened">
+    <div>
+      <mat-nav-list>
+      <a mat-list-item href="#">USER</a>
+      <a mat-list-item href="#">placeholder</a>
+      <a mat-list-item href="#">privacy</a>
+      <a mat-list-item href="#">settings</a>
+
+    </mat-nav-list>
+    </div>
+    
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button (click)="opened=!opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="welcome">
+      <div class="stepper"> 
+        <mat-horizontal-stepper linear>
+          <mat-step label="step1" completed=true>
+            <p>Personal details</p>
+          </mat-step>
+          <mat-step label="step2" completed=true>
+            <p>Qualification details</p>
+          </mat-step>
+          <mat-step label="step3" completed=true>
+            <p>Done!</p>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </div>
+      <div class="welcomemessage">
+        <h1>WELCOME User ,</h1>
+    <h3>Tell Us About Yourself . We Can Serve You Better </h3>
+      </div>
+      
+    </div>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container> 
+
+</section>
+

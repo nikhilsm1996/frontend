@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { RecruiterService } from './recruiter.service';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    RecruiterComponent
+    RecruiterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
